@@ -1,0 +1,152 @@
+:root {
+    --main: #e22c38;
+    --main-light: #e22c382a;
+    --radius: 12px;
+}
+
+body {
+    font-family: Manrope !important;
+    background-color: #f4f4f4;
+}
+
+/* Utilities */
+.text-main {
+    color: var(--main) !important;
+}
+.bg-main {
+    background-color: var(--main) !important;
+}
+.bg-black {
+    background: #000000 !important;
+}
+.text-blue {
+    color: #1f48d1 !important;
+}
+.bg-blue {
+    background: #1f48d1 !important;
+}
+.white-placeholder::placeholder {
+    color: white;
+}
+.input {
+    height: 48px !important;
+}
+.btn, .input {
+    border-radius: var(--radius) !important;
+    border: 1px solid white;
+    border-radius: 0px !important;
+    background: none;
+}
+.btn:focus, input:focus, textarea:focus {
+    box-shadow: 0px 0px 0px 0px !important;
+}
+.input:hover, .input:focus {
+    background: none;
+    border: 1px solid white !important;
+}
+.radius {
+    border-radius: var(--radius);
+}
+.hr-bottom {
+    background: #6c757d;
+    opacity: .8;
+    height: 2px;
+}
+/* / Utilities */
+
+/* Mask Group */
+.mask-group {
+    height: 80px !important;
+    background-image: url(./../images/Mask\ Group\ 14.png);
+    background-position: center;
+}
+/* / Mask Group */
+
+/* Navbar */
+#navbar {
+    transition: .5s;
+}
+.logo {
+    height: 100px;
+}
+/* / Navbar */
+
+/* Hero */
+.hero {
+    background: #f4f4f4;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.hero-title {
+    font-size: 80px;
+    color: black;
+}
+.hero-description {
+    color: black;
+}
+/* / Hero */
+
+/* Items */
+.nft-box {
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+.nft-img {
+    box-shadow: 0px 0px 14px -5px black;
+    border-radius: 17px;
+}
+/* / Items */
+
+/* Support Btn */
+button.btn.text-white.rounded {
+    position: fixed;
+    bottom: 24px;
+    right: 17px;
+    border-radius: 34px !important;
+    border: 0px !important;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 22px;
+}
+/* / Support Btn */
+.empty-nav-col {
+    display: block; 
+}
+
+/* Single NFT Page */
+.single-nft-img-holder {
+    border: 1px solid #e3e3e3;
+    border-radius: 17px;
+}
+.buy-now-btn {
+    background: #1f48d1 !important;
+    color: white !important;
+    border-radius: 7px !important;
+}
+.buy-now-btn:hover {
+    background: #707070 !important;
+}
+/* / Single NFT Page */
+
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 37px;
+    }
+    .logo {
+        height: 50px;
+    }
+    .logo-col {
+        justify-content: end;
+    }
+    .empty-nav-col {
+        display: none;
+    }
+    .single-nft-title {
+        margin-top: 10px;
+    }
+    #about-item-section {
+        margin-top: -145px;
+    }
+}
