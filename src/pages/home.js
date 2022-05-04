@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
+import {nftCards} from '../data/cards';
 
 
 const Home = () => {
@@ -26,232 +27,41 @@ const Home = () => {
                 
                 <div className="row">
 
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 1.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
+
+                    {
+                        nftCards.map( item => (
+
+                            <div key={item.id} className="col-md-3 mb-5">
+                                <div className="nft-box">
+                                    <a href="#">
+                                        <img src={item.src} className="img-fluid nft-img" />
+                                    </a>
+                                    <div className="m-2">
+                                        <div className="d-flex mt-4">
+                                            <div className="col">
+                                                <p className="text-muted h5">{item.title}</p>
+                                            </div>
+                                            <div className="col my-auto text-end">
+                                                <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
+                                            </div>
+                                        </div>
+                                        <p className="text-muted pb-0 mb-0">
+                                           {item.description}
+                                        </p>
+                                        <div className="text-end mt-0 pt-0">
+                                            <button className="btn">
+                                                <i className="fa fa-heart text-muted"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 2.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 3.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 4.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 5.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 6.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 1.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 2.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3 mb-5">
-                        <div className="nft-box">
-                            <a href="#">
-                                <img src="./assets/images/Mask Group 3.png" className="img-fluid nft-img" />
-                            </a>
-                            <div className="m-2">
-                                <div className="d-flex mt-4">
-                                    <div className="col">
-                                        <p className="text-muted h5">Title</p>
-                                    </div>
-                                    <div className="col my-auto text-end">
-                                        <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i> 0.000</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted pb-0 mb-0">
-                                    Lorem ipsum dolor sit amet
-                                </p>
-                                <div className="text-end mt-0 pt-0">
-                                    <button className="btn">
-                                        <i className="fa fa-heart text-muted"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+                        ))
+
+                    }
+
                 </div>
             </div>
         </div>
@@ -286,7 +96,7 @@ const Home = () => {
             </div>
         </div>
 
-        <button className="btn text-white rounded" style={{backgroundColor: '#6c757d'}}><i class="fa fa-question-circle"></i> Support</button>
+        <button className="btn text-white rounded" style={{backgroundColor: '#6c757d'}}><i className="fa fa-question-circle"></i> Support</button>
        
         </>
      );
