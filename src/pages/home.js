@@ -40,14 +40,14 @@ const Home = () => {
                                     <div className="m-2">
                                         <div className="d-flex mt-4">
                                             <div className="col">
-                                                <p className="text-muted h5">{item.title}</p>
+                                                <p className="text-muted h5">{item.name}</p>
                                             </div>
                                             <div className="col my-auto text-end">
                                                 <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
                                             </div>
                                         </div>
                                         <p className="text-muted pb-0 mb-0">
-                                           {item.description}
+                                           {/* {item.description} */}
                                         </p>
                                         <div className="text-end mt-0 pt-0">
                                             <button className="btn">

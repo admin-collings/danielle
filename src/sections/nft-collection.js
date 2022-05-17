@@ -10,7 +10,9 @@ const NFTCollection = () => {
                 <div className="d-flex justify-content-center">
                     <div className="w-75">
                         <p className="text-center hero-description">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum quis quo, tempora atque consectetur odio vitae saepe delectus nobis iure quae molestiae repellendus cupiditate beatae laborum unde eum minus vel hic animi! Magni modi incidunt amet atque autem odit, aut placeat! Officia dolores debitis amet ex consequatur ad dolore recusandae.
+                        With personalities like Nelson Mandela, Martin Luther King, Stephen Hawking among a host of other notable figures who have made an impact on world history and society, this new collection from Danielle honours those who have inspired, innovated, and shaped human potential across eras. 
+                        <br /><br />
+                        Exquisite in detail and original in concept, Danielle effectively depicts the genius of these timeless personalities as she immortalises their greatness on the blockchain, turning them into paragons—sources of contemplation of what the future generations should aspire to be and achieve.
                         </p>
                     </div>
                 </div>

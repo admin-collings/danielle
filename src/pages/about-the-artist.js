@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 const AboutTheArtist = () => {
     return ( 
@@ -12,9 +13,9 @@ const AboutTheArtist = () => {
                         </div>
                         <div className="col logo-col">
                             <div className="d-flex justify-content-center">
-                                <a className="nav-link active" aria-current="page" href="#">
-                                    <img src="./assets/images/logo.png" className="img-fluid logo" />
-                                </a>
+                                <Link to="/" className="nav-link active" aria-current="page" href="#">
+                                    <img src="../assets/images/logo.png" className="img-fluid logo" />
+                                </Link>
                             </div>
                         </div>
                         <div className="col empty-nav-col"></div>
