@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
@@ -33,9 +34,9 @@ const Home = () => {
 
                             <div key={item.id} className="col-md-3 mb-5">
                                 <div className="nft-box">
-                                    <a href="#">
+                                    <Link to={'/item/' + item.id}>
                                         <img src={item.src} className="img-fluid nft-img" />
-                                    </a>
+                                    </Link>
                                     <div className="m-2">
                                         <div className="d-flex mt-4">
                                             <div className="col">
