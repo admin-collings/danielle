@@ -18,10 +18,7 @@ const Item = () => {
         <section>
         
             <AboutTheArtist />
-            <div className="container-fluid px-0 mask-group"></div>
-
-            <div className="container-fluid px-0 mask-group"></div>
-    
+          
             <div className="container-fluid py-5 bg-white">
                 <div className="container py-5">
                     <div className="row justify-content-between">
