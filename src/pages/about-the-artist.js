@@ -1,16 +1,67 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { ethers } from 'ethers';
+import { useState } from 'react';
 
 const AboutTheArtist = () => {
 
-    const handleWalletConnect = () => {
+    const [data, setdata] = useState({
+        address: "",
+        Balance: null,
+      });
 
-        //handle connecting wallet here
+    // Button handler button for handling a
+    // request event for metamask
+      const handleWalletConnect = () => {
 
-    }
+        // Asking if metamask is already present or not
+        if (window.ethereum) {
 
-    return ( 
+          // res[0] for fetching a first wallet
+          window.ethereum
+            .request({ method: "eth_requestAccounts" })
+            .then((res) => accountChangeHandler(res[0]));
+        } else {
+          alert("install metamask extension!!");
+        }
+      };
+
+      // getbalance function for getting a balance in
+      // a right format with help of ethers
+      const getbalance = (address) => {
+
+        // Requesting balance method
+        window.ethereum
+          .request({ 
+            method: "eth_getBalance", 
+            params: [address, "latest"] 
+          })
+          .then((balance) => {
+            // Setting balance
+            setdata({
+              Balance: ethers.utils.formatEther(balance),
+            });
+          });
+      };
+
+      // Function for getting handling all events
+      const accountChangeHandler = (account) => {
+        // Setting an address data
+        setdata({
+          address: account,
+        });
+
+        // Setting a balance
+        getbalance(account);
+      };
+
+
+    // const MAINNET_RPC_URL = 'https://mainnet.infura.io/v3/b9630684a49a4193b7ad0d2677da809a'
+    // const handleWalletConnect = async () => {
+    // }
+
+
+    return (
         <div className="container-fluid bg-white">
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-4" id="navbar">
                 <div className="container">
@@ -26,13 +77,13 @@ const AboutTheArtist = () => {
                             </div>
                         </div>
                         <div className="col my-auto empty-nav-col">
-                            <button onClick={handleWalletConnect} className='btn btn-primary btn-rounded wallet__connect'>Wallet Connect</button>
+                            <button onClick={() => handleWalletConnect()} className='btn btn-primary btn-rounded wallet__connect'>Wallet Connect</button>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
-     );
+    );
 }
- 
+
 export default AboutTheArtist;
