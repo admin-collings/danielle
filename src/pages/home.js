@@ -5,6 +5,7 @@ import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
 import { nftCards } from '../data/cards';
+import { EqualHeight, EqualHeightElement } from 'react-equal-height';
 
 
 const Home = () => {
@@ -22,46 +23,38 @@ const Home = () => {
 
                 <div className="container">
 
-                    <FilterSection />
+                    <h2 className='text-center mb-5 mb-md-5'>Mint your favourite piece below!</h2>
 
-                    <div className="row">
-
-
-                        {
-                            nftCards.map(item => (
-
-                                <div key={item.id} className="col-md-3 mb-5">
-                                    <div className="nft-box">
-                                        <Link to={'/item/' + item.id}>
-                                            <img src={item.src} className="img-fluid nft-img" />
-                                        </Link>
-                                        <div className="m-2">
-                                            <div className="d-flex mt-4">
-                                                <div className="col">
-                                                    <p className="text-muted h5">{item.name}</p>
+                    <EqualHeight>
+                        <div className="row">
+                            {
+                                nftCards.map(item => (
+                                    <div key={item.id} className="col-md-3 mb-5">
+                                        <div className="nft-box">
+                                            <Link to={'/item/' + item.id}>
+                                                <img src={item.src} className="img-fluid nft-img" />
+                                            </Link>
+                                            <EqualHeightElement>
+                                                <div className="m-2">
+                                                    <div className="d-flex mt-4">
+                                                        <div className="col">
+                                                            <p className="text-muted h5">{item.name}</p>
+                                                        </div>
+                                                        <div className="col my-auto text-end">
+                                                            <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-muted pb-0 mb-0">
+                                                        {/* {item.description} */}
+                                                    </p>
                                                 </div>
-                                                <div className="col my-auto text-end">
-                                                    <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
-                                                </div>
-                                            </div>
-                                            <p className="text-muted pb-0 mb-0">
-                                                {/* {item.description} */}
-                                            </p>
-                                            <div className="text-end mt-0 pt-0">
-                                                <button className="btn">
-                                                    <i className="fa fa-heart text-muted"></i>
-                                                </button>
-                                            </div>
+                                            </EqualHeightElement>
                                         </div>
                                     </div>
-                                </div>
-
-
-                            ))
-
-                        }
-
-                    </div>
+                                ))
+                            }
+                        </div>
+                    </EqualHeight>
                 </div>
             </div>
 
@@ -82,7 +75,7 @@ const Home = () => {
                                     <a href="#" className="text-white text-decoration-none mx-2 h5">SEARCH</a>
                                 </li>
                                 <li className="d-inline-block">
-                                    <a href="#" className="text-white text-decoration-none mx-2 h5">ABOUT THE ARTIST</a>
+                                    <a href="https://daniellesartwork.com/pages/about-me" className="text-white text-decoration-none mx-2 h5">ABOUT THE ARTIST</a>
                                 </li>
                                 <li className="d-inline-block">
                                     <a href="#" className="text-white text-decoration-none mx-2 h5">CONTACT US</a>
