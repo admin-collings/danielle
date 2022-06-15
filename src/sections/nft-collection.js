@@ -6,7 +6,7 @@ const NFTCollection = () => {
         
         <div className="container-fluid hero">
             <div className="container">
-                <p className="text-center hero-title">NFT COLLECTION</p>
+                <p className="text-center hero-title">LUMINARY</p>
                 <div className="d-flex justify-content-center">
                     <div className="w-75">
                         <p className="text-center hero-description">
