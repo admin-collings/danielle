@@ -67,7 +67,7 @@ const AboutTheArtist = () => {
                 <div className="container">
                     <div className="d-flex w-100">
                         <div className="col my-auto">
-                            <a className="navbar-brand fw-bolder" href="#">ABOUT THE ARTIST</a>
+                            <a className="navbar-brand fw-bolder" href="https://daniellesartwork.com/pages/about-me">ABOUT THE ARTIST</a>
                         </div>
                         <div className="col logo-col">
                             <div className="d-flex justify-content-center">
