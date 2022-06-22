@@ -72,22 +72,7 @@ const Home = () => {
                             <input type="text" className="form-control input white-placeholdert text-white" placeholder="Enter your email address" />
                             <button className="btn bg-white text-gray rounded-0 px-2 py-1 mt-4">SUBSCRIBE</button>
                         </div>
-                        <div className="col-md-6 my-2">
-                            <ul className="p-0">
-                                <li className="d-inline-block">
-                                    <a href="#" className="text-white text-decoration-none mx-2 h5">HOME</a>
-                                </li>
-                                <li className="d-inline-block">
-                                    <a href="#" className="text-white text-decoration-none mx-2 h5">SEARCH</a>
-                                </li>
-                                <li className="d-inline-block">
-                                    <a href="https://daniellesartwork.com/pages/about-me" className="text-white text-decoration-none mx-2 h5">ABOUT THE ARTIST</a>
-                                </li>
-                                <li className="d-inline-block">
-                                    <a href="#" className="text-white text-decoration-none mx-2 h5">CONTACT US</a>
-                                </li>
-                            </ul>
-                        </div>
+                     
                     </div>
                     <hr className="mb-3 mt-5 hr-bottom" />
                     <p className="text-center text-muted fw-bolder mt-4">Created by <a href="#" className="text-decoration-none text-muted">COLLINGS NFT</a></p>
