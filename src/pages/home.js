@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
 import { nftCards } from '../data/cards';
-import { EqualHeight, EqualHeightElement } from 'react-equal-height';
+import { EqualHeight, EqualHeightElement, EqualHeightContext } from 'react-equal-height';
 
 
 const Home = () => {
+    
+    const [loadImage, setLoadImage] =  useState(false)
 
     return (
         <>
@@ -25,18 +27,20 @@ const Home = () => {
 
                     <h2 className='text-center mb-5 mb-md-5'>Mint your favourite piece below!</h2>
 
-                    <EqualHeight>
+                    <EqualHeight updateOnChange={loadImage}>
                         <div className="row">
                             {
                                 nftCards.map(item => (
                                     <div key={item.id} className="col-md-3 mb-5">
                                         <div className="nft-box">
                                             <Link to={'/item/' + item.id}>
-                                                <video autoPlay loop muted className="img-fluid nft-img">
+                                                <video 
+                                                    onLoadedData={()=>setLoadImage(true)}
+                                                    autoPlay loop muted className="img-fluid nft-img">
                                                     <source alt="" src={item.src} type="video/webm" />
                                                 </video>
                                             </Link>
-                                            <EqualHeightElement>
+                                            <EqualHeightElement name="names">
                                                 <div className="m-2">
                                                     <div className="d-flex mt-4">
                                                         <div className="col">

@@ -27,7 +27,13 @@ const Item = () => {
                                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                                     <div className="carousel-inner">
                                     <div className="carousel-item active">
-                                        <img src={currentItem.src} className="d-block w-100 img-fluid" alt="..." />
+                                        <img src={currentItem.src} alt={currentItem.name} />
+                                        <video 
+                                            key={currentItem.name}
+                                            autoPlay loop muted
+                                            className="d-block w-100 img-fluid">
+                                            <source alt="" src={currentItem.src} type="video/webm" />
+                                        </video>
                                     </div>
                                     
                                     </div>
