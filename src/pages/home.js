@@ -32,7 +32,9 @@ const Home = () => {
                                     <div key={item.id} className="col-md-3 mb-5">
                                         <div className="nft-box">
                                             <Link to={'/item/' + item.id}>
-                                                <img src={item.src} className="img-fluid nft-img" />
+                                                <video autoPlay loop muted className="img-fluid nft-img">
+                                                    <source alt="" src={item.src} type="video/webm" />
+                                                </video>
                                             </Link>
                                             <EqualHeightElement>
                                                 <div className="m-2">
