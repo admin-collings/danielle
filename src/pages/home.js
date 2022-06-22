@@ -75,7 +75,10 @@ const Home = () => {
                      
                     </div>
                     <hr className="mb-3 mt-5 hr-bottom" />
-                    <p className="text-center text-muted fw-bolder mt-4">Created by <a href="#" className="text-decoration-none text-muted">COLLINGS NFT</a></p>
+                    <p className="text-center text-muted fw-bolder mt-4">
+                        Created by <a href="https://collingsnft.io/" 
+                        target="_blank"
+                        className="text-decoration-none text-muted">COLLINGS NFT</a></p>
                 </div>
             </div>
 
