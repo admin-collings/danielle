@@ -74,8 +74,8 @@ body {
 /* Hero */
 .hero {
     background: #f4f4f4;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .hero-title {
     font-size: 80px;
