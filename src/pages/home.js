@@ -79,8 +79,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <button className="btn text-white rounded" style={{ backgroundColor: '#6c757d' }}><i className="fa fa-question-circle"></i> Support</button>
-
+        
         </>
     );
 }
