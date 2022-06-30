@@ -32,6 +32,7 @@ const Item = () => {
                                         <VideoItem 
                                             videoKey={currentItem.name}
                                             videoSource={currentItem.src}
+                                            videoType="video/webm"
                                         />
 
                                     </div>
