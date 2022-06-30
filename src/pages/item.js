@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 
 import AboutTheArtist from './about-the-artist';
 import { nftCards } from '../data/cards';
+import VideoItem from '../components/video-item';
 
 const Item = () => {
     const { id } = useParams()
@@ -27,12 +28,12 @@ const Item = () => {
                                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                                     <div className="carousel-inner">
                                     <div className="carousel-item active">
-                                        <video 
-                                            key={currentItem.name}
-                                            autoPlay loop muted
-                                            className="d-block w-100 img-fluid">
-                                            <source alt="" src={currentItem.src} type="video/webm" />
-                                        </video>
+
+                                        <VideoItem 
+                                            videoKey={currentItem.name}
+                                            videoSource={currentItem.src}
+                                        />
+
                                     </div>
                                     
                                     </div>
