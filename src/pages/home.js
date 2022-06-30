@@ -6,6 +6,7 @@ import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
 import { nftCards } from '../data/cards';
 import { EqualHeight, EqualHeightElement, EqualHeightContext } from 'react-equal-height';
+import VideoItemHomepage from '../components/video-item-homepage';
 
 
 const Home = () => {
@@ -34,11 +35,11 @@ const Home = () => {
                                     <div key={item.id} className="col-md-3 mb-5">
                                         <div className="nft-box">
                                             <Link to={'/item/' + item.id}>
-                                                <video 
-                                                    onLoadedData={()=>setLoadImage(true)}
-                                                    autoPlay loop muted className="img-fluid nft-img">
-                                                    <source alt="" src={item.src} type="video/webm" />
-                                                </video>
+                                                <VideoItemHomepage 
+                                                    setLoadImage={setLoadImage}
+                                                    source={item.src}
+                                                    format="video/webm"
+                                                />
                                             </Link>
                                             <EqualHeightElement name="names">
                                                 <div className="m-2">
