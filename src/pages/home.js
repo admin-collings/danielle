@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
-import { nftCards } from '../data/cards';
-import { EqualHeight, EqualHeightElement, EqualHeightContext } from 'react-equal-height';
+import { nftCards } from '../data/webms';
+import { EqualHeight, EqualHeightElement } from 'react-equal-height';
 import VideoItemHomepage from '../components/video-item-homepage';
 
 

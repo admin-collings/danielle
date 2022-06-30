@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { useParams, useHistory } from 'react-router-dom';
 
 import AboutTheArtist from './about-the-artist';
-import { nftCards } from '../data/cards';
+import { nftCards } from '../data/webms';
 import VideoItem from '../components/video-item';
 
 const Item = () => {
