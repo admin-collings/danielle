@@ -1,16 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { useParams, useHistory } from 'react-router-dom';
 
 import AboutTheArtist from './about-the-artist';
-import { nftCards } from '../data/cards';
+import { nftCards } from '../data/webms';
+import { nftCards as nftImage } from '../data/image';
 import VideoItem from '../components/video-item';
 
 const Item = () => {
+    
     const { id } = useParams()
     let history = useHistory();
 
     const currentItem =  nftCards[id - 1]
+    const currentItemImage =  nftImage[id - 1]
     
     const nextPage = Number(id)+1
     const prevPage = Number(id)-1
@@ -32,6 +34,10 @@ const Item = () => {
                                         <VideoItem 
                                             videoKey={currentItem.name}
                                             videoSource={currentItem.src}
+                                            videoType="video/webm"
+
+                                            imgSource={currentItemImage.src}
+                                            imgKey={currentItemImage.name}
                                         />
 
                                     </div>
@@ -63,9 +69,9 @@ const Item = () => {
                             </div>
                         </div>
                         <div className="col-md-6 my-auto">
-                            <p className="h2 text-dark fw-bolder single-nft-title">{currentItem.name}</p>
+                            <p className="h2 text-dark text-capitalize fw-bolder single-nft-title">{currentItem.name}</p>
                             <br />
-                            <p className="text-muted">{currentItem.description}</p>
+                            <p style={{ whiteSpace : "pre-line" }} className="text-muted">{currentItem.description}</p>
                             {/* <p className="text-dark">Lorem ipsum</p> */}
                             <br />
                             <hr />
@@ -79,13 +85,13 @@ const Item = () => {
             <div className="container-fluid bg-white py-5" id="about-item-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-md-8 mx-auto">
                             <p className="h2 fw-bold mb-md-4">About the Work</p>
                             <p className="mt-2">
                             With personalities like Nelson Mandela, Oprah, Stephen Hawking among a host of other notable figures who have made an impact on world history and society, this new collection from Danielle honours those who have inspired, innovated, and shaped human potential across eras.
                             </p>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 d-none">
                             <div>
                                 <p className="text-black my-0 py-0 fw-bolder">Contract Address</p>
                                 <p className="text-muted">000000000000000000000</p>

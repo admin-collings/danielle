@@ -6,12 +6,21 @@ const VideoItem = (props) => {
     
 
     return ( 
-        <video 
-            key={props.videoKey}
-            autoPlay loop muted
-            className="d-block w-100 img-fluid">
-            <source alt="" src={props.videoSource} type="video/webm" />
-        </video>
+        <React.Fragment>
+            <video 
+                key={props.videoKey}
+                autoPlay 
+                loop 
+                muted
+                playsInline
+                className="w-100 img-fluid d-none d-md-block">
+                <source alt="" src={props.videoSource} type={props.videoType} />
+            </video>
+            
+            <div class="d-md-none">
+                <img className="img-fluid" src={props.imgSource} />
+            </div>
+        </React.Fragment>
     );
 }
  

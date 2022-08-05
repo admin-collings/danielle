@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import FilterSection from '../sections/filter';
 import NFTCollection from '../sections/nft-collection';
 import AboutTheArtist from './about-the-artist';
-import { nftCards } from '../data/cards';
-import { EqualHeight, EqualHeightElement, EqualHeightContext } from 'react-equal-height';
+import { nftCards } from '../data/webms';
+import { EqualHeight, EqualHeightElement } from 'react-equal-height';
+import VideoItemHomepage from '../components/video-item-homepage';
+import MobileItem from '../components/list-item-mobile';
 
 
 const Home = () => {
@@ -27,40 +28,47 @@ const Home = () => {
 
                     <h2 className='text-center mb-5 mb-md-5'>Mint your favourite piece below!</h2>
 
-                    <EqualHeight updateOnChange={loadImage}>
-                        <div className="row">
-                            {
-                                nftCards.map(item => (
-                                    <div key={item.id} className="col-md-3 mb-5">
-                                        <div className="nft-box">
-                                            <Link to={'/item/' + item.id}>
-                                                <video 
-                                                    onLoadedData={()=>setLoadImage(true)}
-                                                    autoPlay loop muted className="img-fluid nft-img">
-                                                    <source alt="" src={item.src} type="video/webm" />
-                                                </video>
-                                            </Link>
-                                            <EqualHeightElement name="names">
-                                                <div className="m-2">
-                                                    <div className="d-flex mt-4">
-                                                        <div className="col">
-                                                            <p className="text-muted h5">{item.name}</p>
+                    <div class="d-none d-md-block">
+                        <EqualHeight updateOnChange={loadImage}>
+                            <div className="row">
+                                {
+                                    nftCards.map(item => (
+                                        <div key={item.id} className="col-md-3 mb-5">
+                                            <div className="nft-box">
+                                                <Link to={'/item/' + item.id}>
+                                                    <VideoItemHomepage
+                                                        setLoadImage={setLoadImage}
+                                                        source={item.src}
+                                                        format="video/webm"
+                                                    />
+                                                </Link>
+                                                <EqualHeightElement name="names">
+                                                    <div className="m-2">
+                                                        <div className="d-flex mt-4">
+                                                            <div className="col">
+                                                                <p className="text-muted text-capitalize h5">{item.name}</p>
+                                                            </div>
+                                                            <div className="col my-auto text-end">
+                                                                <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
+                                                            </div>
                                                         </div>
-                                                        <div className="col my-auto text-end">
-                                                            <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
-                                                        </div>
+                                                        <p className="text-muted pb-0 mb-0">
+                                                            {/* {item.description} */}
+                                                        </p>
                                                     </div>
-                                                    <p className="text-muted pb-0 mb-0">
-                                                        {/* {item.description} */}
-                                                    </p>
-                                                </div>
-                                            </EqualHeightElement>
+                                                </EqualHeightElement>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))
-                            }
-                        </div>
-                    </EqualHeight>
+                                    ))
+                                }
+                            </div>
+                        </EqualHeight>
+                    </div>
+
+                    <MobileItem />
+                    
+
+
                 </div>
             </div>
 
