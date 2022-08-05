@@ -2,7 +2,7 @@ const VideoItemHomepage = (props) => {
 
     return ( 
         <video 
-            onLoadedData={()=>props.handleSetLoadImage(true)}
+            onLoadedData={()=>props.setLoadImage(true)}
             autoPlay 
             loop 
             muted 
