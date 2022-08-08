@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { useParams, useHistory } from 'react-router-dom';
 
 import AboutTheArtist from './about-the-artist';
@@ -39,7 +38,7 @@ const Item = () => {
                                     
                                     </div>
                                     {
-                                        id != 1 &&
+                                        id !== 1 &&
                                         <button 
                                         onClick={ () => { history.push("/item/" + prevPage  ); } }
                                         className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -51,7 +50,7 @@ const Item = () => {
                                     }
                                     
                                     {   
-                                        id != nftCards.length &&
+                                        id !== nftCards.length &&
                                         <button 
                                         onClick={ () => { history.push("/item/" + nextPage  ); } }
                                         className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
@@ -80,13 +79,13 @@ const Item = () => {
             <div className="container-fluid bg-white py-5" id="about-item-section">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-md-8 mx-auto">
                             <p className="h2 fw-bold mb-md-4">About the Work</p>
                             <p className="mt-2">
                             With personalities like Nelson Mandela, Oprah, Stephen Hawking among a host of other notable figures who have made an impact on world history and society, this new collection from Danielle honours those who have inspired, innovated, and shaped human potential across eras.
                             </p>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 d-none">
                             <div>
                                 <p className="text-black my-0 py-0 fw-bolder">Contract Address</p>
                                 <p className="text-muted">000000000000000000000</p>
