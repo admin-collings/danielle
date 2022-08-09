@@ -38,7 +38,7 @@ const Item = () => {
                                     
                                     </div>
                                     {
-                                        id !== 1 &&
+                                        id != 1 &&
                                         <button 
                                         onClick={ () => { history.push("/item/" + prevPage  ); } }
                                         className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -50,7 +50,7 @@ const Item = () => {
                                     }
                                     
                                     {   
-                                        id !== nftCards.length &&
+                                        id != nftCards.length &&
                                         <button 
                                         onClick={ () => { history.push("/item/" + nextPage  ); } }
                                         className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
