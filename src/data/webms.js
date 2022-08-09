@@ -58,9 +58,14 @@ export const nftCards = [
     },
     {
         id : 9,
-        name : 'Overcoming',
+        name : 'Legacy',
         price : '0.000',
-        description  : "She has been many things throughout her fruitful life: a singer, songwriter, actress, entrepreneur, and activist. But above it all, Olivia Newton-John is a survivor.\n\nLife in the entertainment scene proved generous to Olivia having been a four-time Grammy Award-winner with 5 U.S. number-one hits, 10 Top 10 hits on the Billboard Hot 100, and 2 Billboard 200 number-one albums under her belt. But more than anything else, what Olivia lives for is her dedication to environmental and animal rights activism and her involvement in charitable giving. Olivia also delved into business endeavours like promoting products for Koala Blue and being a co-owner of the Gaia Retreat & Spa in Australia.\n\nNaturally resilient, when she was diagnosed with Breast Cancer the same weekend her father died she did not simply give in. She turned her experience into advocacy for breast cancer research alongside other illnesses, expanding her causes. Olivia became a Product Spokesperson for the breast self-examination kit, Liv-Kit. She later on recovered and went on to live with greater appreciation. You can say that Olivia Newton-John is one of a kind. Her never-back-down attitude had earned the admiration of many, inspiring others to live fuller and more productive lives.",
+        description  : 
+        "Olivia has been a symbol of triumphs throughout her fruitful life: a singer, songwriter, actress, entrepreneur, and above it all, Olivia Newton-John was a healing inspiration who pioneered experiences with plant medicine with the Olivia Newton John Foundation."
+        + "\n\n" + "After her first cancer diagnosis, Newton-John became a prominent campaigner, setting up the Olivia Newton-John Cancer and Wellness Research Centre in Melbourne." 
+        + "\n\n" + "Her prominence as an activist for research and better treatment will likely remain as key an element of her legacy. Life in the entertainment scene proved generous to Olivia having been a four-time Grammy Award-winner with 5 U.S. number-one hits, 10 Top 10 hits on the Billboard Hot 100, and 2 Billboard 200 number-one albums under her belt." 
+        + "\n\n" +  "But more than anything else, what Olivia lives for is her dedication to environmental and animal rights activism and her involvement in charitable giving. Olivia also delved into business endeavours like promoting products for Koala Blue and being a co-owner of the Gaia Retreat & Spa in Australia. Naturally resilient, when she was diagnosed with Breast Cancer the same weekend her father died she did not simply give in. She turned her experience into advocacy for breast cancer research alongside other illnesses, expanding her causes." 
+        + "\n\n" + "Olivia became a Product Spokesperson for the breast self-examination kit, Liv-Kit. She later on recovered and went on to live with greater appreciation. You can say that Olivia Newton-John is one of a kind. Her never-back-down attitude had earned the admiration of many, inspiring others to live fuller and more productive lives.",
         src : '../assets/images/webms/newton-jon.webm',
     },
     {

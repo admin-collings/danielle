@@ -44,7 +44,7 @@ const Home = () => {
                                                 <div className="m-2">
                                                     <div className="d-flex mt-4">
                                                         <div className="col">
-                                                            <p className="text-muted h5">{item.name}</p>
+                                                            <p className="text-muted text-capitalize h5">{item.name}</p>
                                                         </div>
                                                         <div className="col my-auto text-end">
                                                             <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>

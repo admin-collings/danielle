@@ -63,9 +63,9 @@ const Item = () => {
                             </div>
                         </div>
                         <div className="col-md-6 my-auto">
-                            <p className="h2 text-dark fw-bolder single-nft-title">{currentItem.name}</p>
+                            <p className="h2 text-dark text-capitalize fw-bolder single-nft-title">{currentItem.name}</p>
                             <br />
-                            <p className="text-muted">{currentItem.description}</p>
+                            <p style={{ whiteSpace : "pre-line" }} className="text-muted">{currentItem.description}</p>
                             {/* <p className="text-dark">Lorem ipsum</p> */}
                             <br />
                             <hr />
