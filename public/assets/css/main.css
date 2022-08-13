@@ -141,7 +141,7 @@ button.btn.text-white.rounded {
         justify-content: end;
     }
     .empty-nav-col {
-        display: none;
+        
     }
     .single-nft-title {
         margin-top: 10px;
@@ -149,4 +149,25 @@ button.btn.text-white.rounded {
     #about-item-section {
         margin-top: -145px;
     }
+
+    .menu-wrap {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:1rem;
+    }
+
+    .menu-wrap > div:nth-child(1) {
+        grid-column:  1 / -1;
+        text-align: center;
+    }
+    .menu-wrap > div:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 1 ;
+    }
+
+    .menu-wrap > div:nth-child(3) {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
 }
