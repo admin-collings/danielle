@@ -38,6 +38,7 @@ const Item = () => {
 
                                             imgSource={currentItemImage.src}
                                             imgKey={currentItemImage.name}
+
                                         />
 
                                     </div>

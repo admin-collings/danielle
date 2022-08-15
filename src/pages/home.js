@@ -28,6 +28,7 @@ const Home = () => {
 
                     <h2 className='text-center mb-5 mb-md-5'>Mint your favourite piece below!</h2>
 
+
                     <div class="d-none d-md-block">
                         <EqualHeight updateOnChange={loadImage}>
                             <div className="row">
@@ -51,6 +52,7 @@ const Home = () => {
                                                             <div className="col my-auto text-end">
                                                                 <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
                                                             </div>
+
                                                         </div>
                                                         <p className="text-muted pb-0 mb-0">
                                                             {/* {item.description} */}

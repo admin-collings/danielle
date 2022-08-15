@@ -6,6 +6,7 @@ const VideoItem = (props) => {
     
 
     return ( 
+
         <React.Fragment>
             <video 
                 key={props.videoKey}
