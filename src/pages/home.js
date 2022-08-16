@@ -12,7 +12,9 @@ const Home = () => {
 
     return (
         <>
-            <AboutTheArtist />
+            <AboutTheArtist 
+                showConnectButton={false}
+            />
             <div className="container-fluid px-0 mask-group"></div>
             <NFTCollection />
 
@@ -41,7 +43,7 @@ const Home = () => {
                                                             <p className="text-muted h5">{item.name}</p>
                                                         </div>
                                                         <div className="col my-auto text-end">
-                                                            <p className="text-muted small">Last <i className="fab fa-ethereum text-dark"></i>{item.price}</p>
+                                                            <p className="text-muted small">Price <i className="fab fa-ethereum text-dark"></i> {item.price}</p>
                                                         </div>
                                                     </div>
                                                     <p className="text-muted pb-0 mb-0">
