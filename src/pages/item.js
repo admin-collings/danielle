@@ -155,7 +155,18 @@ const Item = (props) => {
                                 <br />
                                 <hr />
                                 <p className="text-blue h4">{currentItem.price} ETH</p>
-                                <button className="btn btn-primary mt-md-4 buy-now-btn text-white">Buy</button>
+                                {!showLoading ?
+                                    <button onClick={() => buyNow()} className="btn btn-primary mt-md-4 buy-now-btn text-white">Buy</button> :
+                                    <button className="btn btn-primary mt-md-4 buy-now-btn text-white">
+                                        <RotatingLines
+                                            strokeColor="white"
+                                            strokeWidth="5"
+                                            animationDuration="0.75"
+                                            width="25"
+                                            visible={true}
+                                        />
+                                    </button>
+                                }
                             </div>
                         </div>
                     </div>
