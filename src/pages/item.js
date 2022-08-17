@@ -21,6 +21,8 @@ const Item = (props) => {
     const [showForm, setShowForm] = useState(false);
     const [showLoading, setShowLoading] = useState(false);
     const [provider , setProvider] = useState(null);
+    const [signer, setSigner] = useState(null);
+    const [web3Modal, setWeb3Modal] = useState(null);
 
     const NFTADDRESS = "0x2051b1CEAFF9f8Bde671DEF839b0528b57e307aa"
     const RPC = "https://eth-mainnet.g.alchemy.com/v2/LhI70D7MahkPLa2TQ6JuRIHUq2BYXLnM"
@@ -52,7 +54,7 @@ const Item = (props) => {
             let Contract = new ethers.Contract(
                 NFTADDRESS,
                 abi,
-                provider.getSigner()
+                signer
             );
 
             try {
@@ -93,6 +95,8 @@ const Item = (props) => {
                 isWalletConnected={isWalletConnected}
                 setIsWalletConnected={setIsWalletConnected}
                 setProvider={setProvider}
+                setSigner={setSigner}
+                setWeb3Modal={setWeb3Modal}
             />
             {!showForm ? <div>
                 
