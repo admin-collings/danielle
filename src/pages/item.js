@@ -154,6 +154,7 @@ const Item = (props) => {
                                 {/* <p className="text-dark">Lorem ipsum</p> */}
                                 <br />
                                 <hr />
+                                <p className="text-blue h4">{totalSupply}/11 Minted</p>
                                 <p className="text-blue h4">{currentItem.price} ETH</p>
                                 {!showLoading ?
                                     <button onClick={() => buyNow()} className="btn btn-primary mt-md-4 buy-now-btn text-white">Buy</button> :
