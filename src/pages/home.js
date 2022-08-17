@@ -15,7 +15,9 @@ const Home = () => {
 
     return (
         <>
-            <AboutTheArtist />
+            <AboutTheArtist 
+                showConnectButton={false}
+            />
             <div className="container-fluid px-0 mask-group"></div>
             <NFTCollection />
 
