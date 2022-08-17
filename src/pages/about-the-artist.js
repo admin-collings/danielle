@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ethers } from 'ethers';
+import { ethers, Signer } from 'ethers';
 import { useState } from 'react';
 import WalletConnectProvider from "@walletconnect/web3-provider/dist/umd/index.min.js";
 import Web3Modal from "web3modal";
@@ -11,6 +11,68 @@ const AboutTheArtist = (props) => {
     return address.substring(0, 5) + "..." + address.substring(address.length - 4, address.length);
   }
 
+  async function login() {
+
+    const providerOptions = {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          rpc: {
+            1: "https://eth-mainnet.g.alchemy.com/v2/LhI70D7MahkPLa2TQ6JuRIHUq2BYXLnM",
+            5: "https://eth-goerli.g.alchemy.com/v2/fLfyDQBJ3FXv-lnRW5tFp21hGpDhoCfO",
+            4: "https://eth-rinkeby.alchemyapi.io/v2/df-3YgaL0V-V0leLzSxIw-ifNK1wUbq4",
+            3: "https://eth-ropsten.alchemyapi.io/v2/0wbpTrJ6BsyTXST66ZULTKuLRnohh6rZ",
+          },
+        },
+      },
+    };
+
+    let web3Modal = new Web3Modal({
+      cacheProvider: true,
+      providerOptions,
+    });
+
+    props.setWeb3Modal(web3Modal);
+    await web3Modal.clearCachedProvider();
+
+    const instance = await web3Modal.connect();
+
+    instance.on("disconnect", async () => {
+      console.log("You have disconnected");
+      await web3Modal.clearCachedProvider();
+      window.location.reload();
+    });
+    instance.on("accountsChanged", async () => {
+      console.log("You have changed accounts");
+      try {
+        let signer = await props.provider.getSigner();
+        console.log(await signer.getAddress());
+      } catch {
+        console.log("Disconnected");
+        await web3Modal.clearCachedProvider();
+      }
+      window.location.reload();
+    });
+
+    instance.on("chainChanged", () => window.location.reload());
+    try {
+      let provider = new ethers.providers.Web3Provider(instance);
+      props.setProvider(provider);
+      let signer = (await provider.getSigner());
+      props.setSigner(signer);
+      // Force us to see if we have a proper connection to the blockchain
+      let balance = await signer.getBalance();
+      let loggedInAddress = await signer.getAddress();
+      console.log(await signer.getAddress());
+      props.setAddress(loggedInAddress);
+      props.setIsWalletConnected(true);
+
+    } catch (error) {
+      console.log("Ouch");
+      await web3Modal.clearCachedProvider();
+      console.error(error);
+    }
+  }
   const connectToWalletConnect = async () => {
     const providerOptions = {
       walletconnect: {
@@ -118,7 +180,7 @@ const AboutTheArtist = (props) => {
             <div style={{ display: "flex", justifyContent: "center" }} className="col my-auto empty-nav-col">
               {
                 props.showConnectButton &&
-                <button onClick={() => connectToWalletConnect()} className='btn btn-primary btn-rounded wallet__connect'>{props.isWalletConnected ? renderAddress(props.address) : "Connect Wallet"}</button>
+                <button onClick={() => login()} className='btn btn-primary btn-rounded wallet__connect'>{props.isWalletConnected ? renderAddress(props.address) : "Connect Wallet"}</button>
               }
             </div>
           </div>
