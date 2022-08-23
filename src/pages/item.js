@@ -10,7 +10,7 @@ import { nftCards } from '../data/webms';
 import { nftCards as nftImage } from '../data/image';
 import VideoItem from '../components/video-item';
 import { ethers } from 'ethers';
-
+import Raffle from '../components/raffle';
 
 
 const Item = (props) => {
@@ -180,7 +180,13 @@ const Item = (props) => {
                                 <p className="h2 fw-bold mb-md-4">About the Work</p>
                                 <p className="mt-2">
                                 With personalities like Nelson Mandela, Oprah, Stephen Hawking among a host of other notable figures who have made an impact on world history and society, this new collection from Danielle honours those who have inspired, innovated, and shaped human potential across eras.
+                        <br /><br />
+                        Exquisite in detail and original in concept, Danielle effectively depicts the genius of these timeless personalities as she immortalises their greatness on the blockchain, turning them into paragons—sources of contemplation of what the future generations should aspire to be and achieve.
                                 </p>
+                                <hr />
+                                <article>
+                                    <Raffle />
+                                </article>
                             </div>
                             <div className="col-md-4 d-none">
                                 <div>
