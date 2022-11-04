@@ -156,7 +156,12 @@ const Item = (props) => {
                                 <p className="text-blue h4 d-none">{totalSupply}/11 Minted</p>
                                 <p className="text-blue h4 d-none">{currentItem.price} ETH</p>
                                 {!showLoading ?
-                                    <button onClick={() => buyNow()} className="btn btn-primary mt-md-4 buy-now-btn text-white">Buy</button> :
+                                    <>
+                                    <button onClick={() => buyNow()} className="btn btn-primary mt-md-4 buy-now-btn text-white">Buy</button>
+                                    <a target="_blank" href="https://global.transak.com" className="buy-eth-text" style={{display:'block',marginTop:'1rem', textDecoration: 'none', color:'#212529'}}><u>Buy ETH</u></a>
+                                    </>
+                                    :
+                                    
                                     <button className="btn btn-primary mt-md-4 buy-now-btn text-white">
                                         <RotatingLines
                                             strokeColor="white"
