@@ -153,7 +153,7 @@ const Item = (props) => {
                                 <p style={{ whiteSpace : "pre-line" }} className="text-muted">{currentItem.description}</p>
                                 {/* <p className="text-dark">Lorem ipsum</p> */}
                                 <hr />
-                                <p className="text-blue h4 d-none">{totalSupply}/11 Minted</p>
+                                <p className="text-blue h4">{totalSupply}/11 Minted</p>
                                 <p className="text-blue h4 d-none">{currentItem.price} ETH</p>
                                 {!showLoading ?
                                     <>
